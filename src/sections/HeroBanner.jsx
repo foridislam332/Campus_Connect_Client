@@ -9,7 +9,7 @@ const HeroBanner = () => {
 
                     <p className='text-white mb-10'>Campus Connect is a cutting-edge college booking platform designed to simplify the process of finding the best college for students. </p>
 
-                    <button className='btn_primary'>Find College</button>
+                    <button className='btn_white'>Find College</button>
                 </div>
             </div>
         </section>
