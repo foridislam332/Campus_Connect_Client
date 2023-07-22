@@ -64,7 +64,7 @@ const Reviews = () => {
                                         <img className="w-20" src={review.userImage} alt="" />
                                         <div>
                                             <h2 className="font-medium tracking-wide">{review.username}</h2>
-                                            <p className="text-sm italic">{review.date}</p>
+                                            <p className="text-gray text-sm italic">{review.date}</p>
                                         </div>
                                     </div>
                                     <div className="mt-4">

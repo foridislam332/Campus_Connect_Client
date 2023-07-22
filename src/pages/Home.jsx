@@ -3,6 +3,7 @@ import BestCategories from '../sections/BestCategories';
 import TopColleges from '../sections/TopColleges';
 import CollegeGallery from '../sections/CollegeGallery';
 import Reviews from '../sections/Reviews';
+import ResearchPapers from '../sections/ResearchPapers';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <BestCategories />
             <TopColleges />
             <CollegeGallery />
+            <ResearchPapers />
             <Reviews />
         </>
     );
