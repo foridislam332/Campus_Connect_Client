@@ -10,6 +10,7 @@ export default {
         'navy': '#111d5e',
         'red': '#e32845',
         'gray': '#555',
+        'light-gray': '#d9d9d9'
       }
     },
     container: {
