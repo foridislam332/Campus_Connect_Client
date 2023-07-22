@@ -6,3 +6,18 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }
+
+/* primary button styles */
+.btn_primary {
+  color: #e32845;
+  padding: 12px 32px;
+  background: #ffffff;
+  font-weight: 500;
+  transition: all .3s ease-in-out;
+}
+
+.btn_primary:hover {
+  color: #ffffff;
+  background: #e32845;
+  box-shadow: 0px 16px 48px rgba(39, 39, 39, 0.1);
+}

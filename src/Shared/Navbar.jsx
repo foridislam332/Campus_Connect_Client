@@ -31,7 +31,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <header className={`fixed w-full h-20 flex items-center justify-center lg:py-0 z-50 transition-all duration-300 ease-in-out ${navState ? 'shadow-lg bg-white' : 'shadow-lg lg:shadow-none bg-transparent'}`}>
+        <header className={`fixed w-full h-20 flex items-center justify-center lg:py-0 z-50 transition-all duration-300 ease-in-out ${navState ? 'shadow-lg bg-white' : 'shadow-lg lg:shadow-none bg-white bg-opacity-50'}`}>
             <div className="container">
                 <nav className="flex items-center justify-between">
                     {/* Logo */}
