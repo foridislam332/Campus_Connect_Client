@@ -3,7 +3,7 @@ const CollegeCard = ({ college }) => {
     const { collegeImage, collegeName, admissionProcess, events, researchWorks, sports } = college;
 
     return (
-        <div className="bg-white p-4 border border-red rounded-lg shadow-lg">
+        <div className="bg-white p-4 border border-red rounded-lg shadow-lg hover:shadow-2xl duration-300">
             <img src={collegeImage} alt={collegeName} className="w-full rounded-lg" />
 
             <h2 className="text-red text-2xl font-semibold mb-2 mt-4 drop-shadow-lg line-clamp-1">{collegeName}</h2>
