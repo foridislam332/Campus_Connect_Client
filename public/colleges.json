@@ -1,0 +1,59 @@
+[
+    {
+        "collegeImage": "https://i.ibb.co/02LgXcj/college-1.jpg",
+        "collegeName": "Tech Academy",
+        "admissionProcess": "Admission to Tech Academy is competitive and requires a strong academic background in math and science. Prospective students must submit their academic records, standardized test scores, letters of recommendation, and a personal statement detailing their interest in technology and engineering.",
+        "events": [
+            {
+                "eventName": "Tech Fest",
+                "date": "October 20-22, 2023",
+                "description": "Tech Fest is an annual event that showcases innovative projects and research by students and faculty. It features exhibitions, guest speakers, and networking opportunities."
+            },
+            {
+                "eventName": "Career Fair",
+                "date": "November 15, 2023",
+                "description": "The Career Fair brings together leading tech companies and students, providing an opportunity to explore internships and job opportunities."
+            }
+        ],
+        "researchWorks": "Tech Academy is at the forefront of cutting-edge research in computer science, artificial intelligence, and sustainable technologies. The college partners with industry leaders and government agencies to address global challenges.",
+        "sports": "Soccer"
+    },
+    {
+        "collegeImage": "https://i.ibb.co/XzXxmfp/college-2.jpg",
+        "collegeName": "Art Institute",
+        "admissionProcess": "Admission to the Art Institute is based on a portfolio review and a personal interview. Prospective students are required to submit samples of their artwork, along with academic records and letters of recommendation.",
+        "events": [
+            {
+                "eventName": "Art Exhibition",
+                "date": "November 10-15, 2023",
+                "description": "The Art Exhibition is a week-long event that showcases the creative works of students and faculty across various artistic disciplines."
+            },
+            {
+                "eventName": "Fashion Show",
+                "date": "March 5, 2024",
+                "description": "The Fashion Show features original designs created by fashion design students. It attracts industry professionals and fashion enthusiasts."
+            }
+        ],
+        "researchWorks": "The Art Institute encourages interdisciplinary artistic exploration and collaborates with museums and galleries to promote the fusion of traditional and contemporary art forms.",
+        "sports": "Paintball"
+    },
+    {
+        "collegeImage": " https://i.ibb.co/PY2kd5C/college-3.jpg",
+        "collegeName": "Medico University",
+        "admissionProcess": "Admission to Medico University's medical programs is highly competitive. Prospective students must have a strong academic record in science subjects, demonstrate a passion for medicine, and pass the Medical College Admission Test (MCAT).",
+        "events": [
+            {
+                "eventName": "Medical Symposium",
+                "date": "September 25-27, 2023",
+                "description": "The Medical Symposium brings together medical professionals and researchers to discuss the latest advancements in healthcare and medical research."
+            },
+            {
+                "eventName": "Healthcare Conference",
+                "date": "October 30, 2023",
+                "description": "The Healthcare Conference focuses on topics related to public health, policy, and healthcare access. It provides insights from experts in the field."
+            }
+        ],
+        "researchWorks": "Medico University is dedicated to advancing medical knowledge through research and clinical studies. The university collaborates with leading healthcare institutions to improve patient care and outcomes.",
+        "sports": "Surgery Simulation"
+    }
+]
