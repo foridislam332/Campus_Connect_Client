@@ -10,9 +10,6 @@ export default {
         'navy': '#111d5e',
         'red': '#e32845',
         'gray': '#555',
-      },
-      boxShadow: {
-        'custom': '0px 16px 48px rgba(39, 39, 39, 0.1)',
       }
     },
     container: {
