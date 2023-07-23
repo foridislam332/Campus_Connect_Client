@@ -12,6 +12,7 @@ import SignUp from '../pages/SignUp';
 import ViewProfile from '../pages/ViewProfile';
 import EditProfile from '../pages/EditProfile';
 import PrivateRoute from './PrivateRoute';
+import PageNotFound from '../pages/PageNotFound';
 
 const routes = createBrowserRouter([
     {
@@ -69,6 +70,10 @@ const routes = createBrowserRouter([
                 element: <SignUp />
             },
         ]
+    },
+    {
+        path: '*',
+        element: <PageNotFound />
     }
 ])
 

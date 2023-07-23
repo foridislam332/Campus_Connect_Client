@@ -65,7 +65,7 @@ const Login = () => {
         <section>
             <Breadcrumbs title='Login' />
             <div className="container py-20">
-                <form onSubmit={handleSubmit(onSubmit)} className="max-w-lg mx-auto p-10 shadow-2xl rounded-xl">
+                <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto p-10 shadow-2xl rounded-xl">
                     <h1 className="text-navy text-5xl font-bold mb-8 drop-shadow-lg">Login</h1>
 
                     <div className='flex items-center border border-navy rounded-lg gap-3 p-3'>
