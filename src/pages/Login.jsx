@@ -6,11 +6,24 @@ import { useForm } from 'react-hook-form';
 import { MdAlternateEmail, MdLockOutline } from 'react-icons/md';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import { useState } from "react";
+import useAuth from "../hooks/useAuth";
 
 const Login = () => {
+    const { signIn } = useAuth();
+
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        signIn(data.email, data.password)
+            .then(() => {
+                alert('login success')
+            })
+            .catch(error => {
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "light",
+                });
+            })
     };
 
     const [type, setType] = useState('password');

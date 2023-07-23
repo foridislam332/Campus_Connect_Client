@@ -8,9 +8,13 @@ import { MdAlternateEmail, MdLockOutline } from 'react-icons/md';
 import { HiOutlinePhotograph } from 'react-icons/hi';
 import { BiUserPin } from 'react-icons/bi';
 import { BsShieldCheck } from 'react-icons/bs';
+import useAuth from "../hooks/useAuth";
 
 const SignUp = () => {
+    const { signUpUser, profileUpdate } = useAuth();
+
     const { register, handleSubmit, formState: { errors } } = useForm();
+
     const onSubmit = data => {
         if (data.password.length < 6) {
             return toast.warning('password should be 6 characters', {
@@ -18,15 +22,35 @@ const SignUp = () => {
                 autoClose: 4000,
                 theme: "light",
             });
-        }
+        };
         if (data.password !== data.confirm) {
             return toast.warning("password didn't match", {
                 position: "top-right",
                 autoClose: 4000,
                 theme: "light",
             });
-        }
-        console.log(data)
+        };
+
+        signUpUser(data.email, data.password)
+            .then((result) => {
+                profileUpdate(result.user, data.name, data.photo)
+                    .then(() => {
+                        const user = { name: data.name, email: data.email, role: 'student', photo: data.photo };
+                    }).catch((error) => {
+                        toast.error(error.message, {
+                            position: "top-right",
+                            autoClose: 4000,
+                            theme: "light",
+                        });
+                    });
+            })
+            .catch(error => {
+                toast.error(error.message, {
+                    position: "top-right",
+                    autoClose: 4000,
+                    theme: "light",
+                });
+            });
     };
     return (
         <section>
