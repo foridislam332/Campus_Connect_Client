@@ -1,13 +1,21 @@
 import { Link } from "react-router-dom";
 
+// logo
+import Logo from '../assets/images/logo-w.png';
+
 const Footer = () => {
     return (
         <footer className="pt-20 bg-[#41246D]">
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-gray pb-20">
                     <div className="md:col-span-2">
-                        <h1 className="text-white text-5xl font-bold mb-8">Campus Connect</h1>
-                        <p className="text-light-gray">Campus Connect is a cutting-edge college booking platform designed to simplify the process of finding the best college for students. With its user-friendly interface and comprehensive database, Campus Connect revolutionizes the college search experience.</p>
+                        <div className="flex items-center justify-center">
+                            <Link to="/" className="flex-shrink-0">
+                                <img className='w-48' src={Logo} alt="campus connect logo" />
+                            </Link>
+                        </div>
+
+                        <p className="text-light-gray text-center mt-8 md:px-6">Campus Connect is a cutting-edge college booking platform designed to the process of finding the best college for students. With its comprehensive database, Campus Connect revolutionizes the college search experience.</p>
                     </div>
 
                     <div>

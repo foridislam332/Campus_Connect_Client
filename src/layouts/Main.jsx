@@ -4,10 +4,13 @@ import Footer from '../Shared/Footer';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Main = () => {
     return (
         <>
+            <ScrollToTop />
+
             <Navbar />
             <main>
                 <Outlet />

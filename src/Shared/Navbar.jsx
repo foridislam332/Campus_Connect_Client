@@ -8,7 +8,7 @@ import Drawer from '../components/Drawer';
 import { HiBars3 } from "react-icons/hi2";
 
 // logo
-// import Logo from '../../assets/images/logo.png';
+import Logo from '../assets/images/logo.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -35,9 +35,8 @@ const Navbar = () => {
             <div className="container">
                 <nav className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link to="/" className="flex-shrink-0 text-xl font-bold">
-                        {/* <img src={Logo} alt="campus connect logo" /> */}
-                        Campus Connect
+                    <Link to="/" className="flex-shrink-0">
+                        <img className='w-40' src={Logo} alt="campus connect logo" />
                     </Link>
 
                     {/* toggle button */}
