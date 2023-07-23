@@ -1,14 +1,30 @@
 import { useForm } from "react-hook-form";
 import Breadcrumbs from "../components/Breadcrumbs";
-import useAuth from "../hooks/useAuth";
+import useUsers from "../hooks/useUsers";
+import useAxios from "../hooks/useAxios";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const EditProfile = () => {
-    const { user } = useAuth();
+    const [userData] = useUsers();
+    const navigate = useNavigate();
+    const from = '/view_profile';
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        const newData = { ...data }
-        console.log(newData)
+        useAxios.patch(`/users/${userData?._id}`, data)
+            .then(data => {
+                if (data.data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Profile Update successfully',
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
+                    navigate(from, { replace: true })
+                }
+            })
     };
 
     return (
@@ -19,15 +35,15 @@ const EditProfile = () => {
                 <div className='p-8 max-w-sm mx-auto shadow-2xl'>
                     <div className='flex items-center justify-center'>
                         {
-                            user?.photoURL ? <img
+                            userData?.photo ? <img
                                 className="h-28 w-28 rounded-full object-cover shadow-lg group-hover:shadow-blue duration-300 mx-auto border border-red border-dashed p-2"
-                                src={user?.photoURL}
+                                src={userData?.photo}
                                 alt="User avatar"
                             /> :
                                 <p
                                     className="h-28 w-28 bg-blue text-navy border border-red border-dashed text-7xl flex items-center justify-center font-bold rounded-full shadow-lg group-hover:shadow-blue duration-300"
                                 >
-                                    {user?.displayName?.slice(0, 1)}
+                                    {userData?.name?.slice(0, 1)}
                                 </p>
                         }
                     </div>
@@ -37,26 +53,22 @@ const EditProfile = () => {
                         <div className='flex flex-col gap-2'>
                             <div className='w-full mt-8'>
                                 <label className="text-gray text-sm" htmlFor="name">Name: </label>
-                                <input id='name' defaultValue={user?.displayName} {...register("displayName", { required: true })} className='w-full border border-red py-2 px-3 rounded-md outline-none' />
-                                {errors.displayName && <span className='text-red'>This field is required</span>}
+                                <input id='name' defaultValue={userData?.name} {...register("name")} className='w-full border border-red py-2 px-3 rounded-md outline-none' />
                             </div>
 
                             <div className='w-full'>
-                                <label className="text-gray text-sm" htmlFor="photoURL">Profile Image URL: </label>
-                                <input id='photoURL' defaultValue={user?.photoURL} {...register("photoURL", { required: true })} className='w-full border border-red py-2 px-3 rounded-md outline-none' />
-                                {errors.photoURL && <span className='text-red'>This field is required</span>}
+                                <label className="text-gray text-sm" htmlFor="photo">Profile Image URL: </label>
+                                <input id='photo' defaultValue={userData?.photo} {...register("photo")} className='w-full border border-red py-2 px-3 rounded-md outline-none' />
                             </div>
 
                             <div className='w-full'>
                                 <label className="text-gray text-sm" htmlFor="university">University: </label>
-                                <input id='university' defaultValue={'Tech Academy'} {...register("university", { required: true })} className='w-full border border-red py-2 px-3 rounded-md outline-none' />
-                                {errors.university && <span className='text-red'>This field is required</span>}
+                                <input id='university' defaultValue={userData?.university} {...register("university")} className='w-full border border-red py-2 px-3 rounded-md outline-none' />
                             </div>
 
                             <div className='w-full'>
                                 <label className="text-gray text-sm" htmlFor="address">Address: </label>
-                                <input id='address' defaultValue={'Chandra, Kaliakori, Gazipur'} {...register("address", { required: true })} className='w-full border border-red py-2 px-3 rounded-md outline-none' />
-                                {errors.address && <span className='text-red'>This field is required</span>}
+                                <input id='address' defaultValue={userData?.address} {...register("address")} className='w-full border border-red py-2 px-3 rounded-md outline-none' />
                             </div>
 
                             <div className='w-full mt-2'>

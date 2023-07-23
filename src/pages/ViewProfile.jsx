@@ -3,9 +3,10 @@ import useAuth from '../hooks/useAuth';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { Link } from 'react-router-dom';
 import { FaPencilAlt } from "react-icons/fa";
+import useUsers from '../hooks/useUsers';
 
 const ViewProfile = () => {
-    const { user } = useAuth();
+    const [userData] = useUsers();
 
     return (
         <section>
@@ -17,28 +18,27 @@ const ViewProfile = () => {
                     </Link>
                     <div className='flex items-center justify-center'>
                         {
-                            user?.photoURL ? <img
+                            userData?.photo ? <img
                                 className="h-28 w-28 rounded-full object-cover shadow-lg group-hover:shadow-blue duration-300 mx-auto border border-red border-dashed p-2"
-                                src={user?.photoURL}
+                                src={userData?.photo}
                                 alt="User avatar"
                             /> :
                                 <p
                                     className="h-28 w-28 bg-blue text-navy border border-red border-dashed text-7xl flex items-center justify-center font-bold rounded-full shadow-lg group-hover:shadow-blue duration-300"
                                 >
-                                    {user?.displayName?.slice(0, 1)}
+                                    {userData?.name?.slice(0, 1)}
                                 </p>
                         }
                     </div>
 
                     <div className='text-center mt-3'>
-                        <h2 className='text-navy text-2xl font-medium'>{user?.displayName}</h2>
-                        <p className='text-gray font-light italic'>{user?.email}</p>
+                        <h2 className='text-navy text-2xl font-medium'>{userData?.name}</h2>
+                        <p className='text-gray font-light italic'>{userData?.email}</p>
                     </div>
 
                     <div className='mt-6 flex flex-col gap-3'>
-                        <p><span className='text-navy font-medium'>University:</span> Tech Academy</p>
-                        <p><span className='text-navy font-medium'>Address:</span> Chandra, Kaliakori, Gazipur</p>
-                        <p><span className='text-navy font-medium'>Date of Birth:</span> 07/03/2010</p>
+                        <p><span className='text-navy font-medium'>University:</span> {userData.university}</p>
+                        <p><span className='text-navy font-medium'>Address:</span> {userData.address}</p>
                     </div>
                 </div>
             </div>

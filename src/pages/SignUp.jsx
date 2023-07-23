@@ -10,6 +10,8 @@ import { BiUserPin } from 'react-icons/bi';
 import { BsShieldCheck } from 'react-icons/bs';
 import useAuth from "../hooks/useAuth";
 import SocialLogin from "../components/SocialLogin";
+import useAxios from "../hooks/useAxios";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
     const { signUpUser, profileUpdate } = useAuth();
@@ -36,7 +38,21 @@ const SignUp = () => {
             .then((result) => {
                 profileUpdate(result.user, data.name, data.photo)
                     .then(() => {
-                        const user = { name: data.name, email: data.email, role: 'student', photo: data.photo };
+                        const user = { name: data.name, email: data.email, university: 'N/A', photo: data.photo, address: 'N/A' };
+
+                        useAxios.post('/users', user)
+                            .then(data => {
+                                if (data.data.insertedId) {
+                                    Swal.fire({
+                                        position: 'center',
+                                        icon: 'success',
+                                        title: 'Sign Up successfully',
+                                        showConfirmButton: false,
+                                        timer: 2500
+                                    });
+                                    navigate(from, { replace: true })
+                                }
+                            })
                     }).catch((error) => {
                         toast.error(error.message, {
                             position: "top-right",
