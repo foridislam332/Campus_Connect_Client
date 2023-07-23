@@ -5,7 +5,7 @@ import { Rating, Star } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 
 const AdmissionCard = ({ college }) => {
-    const { collegeImage, collegeName, location, admissionDate, rating } = college;
+    const { _id, collegeImage, collegeName, location, admissionDate, rating } = college;
 
     const myStyles = {
         itemShapes: Star,
@@ -28,7 +28,7 @@ const AdmissionCard = ({ college }) => {
 
                 <p className="mb-2 text-sm line-clamp-2 drop-shadow-lg"><span className="font-semibold text-navy underline">Admission Date:</span> {admissionDate}</p>
 
-                <Link to={`/admission_form/${20}`} className="btn_primary w-full block text-center mt-4">Admission Now</Link>
+                <Link to={`/admission_form/${_id}`} className="btn_primary w-full block text-center mt-4">Admission Now</Link>
             </div>
         </div>
     );

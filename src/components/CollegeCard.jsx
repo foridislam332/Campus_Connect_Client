@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const CollegeCard = ({ college }) => {
-    const { collegeImage, collegeName, admissionProcess, events, researchWorks, sports } = college;
+    const { _id, collegeImage, collegeName, admissionProcess, events, researchWorks, sports } = college;
 
     return (
         <div className="bg-white p-4 border border-red rounded-lg shadow-lg hover:shadow-2xl duration-300">
@@ -26,7 +26,7 @@ const CollegeCard = ({ college }) => {
 
             <p className="mb-2 text-sm line-clamp-2 drop-shadow-lg"><span className="font-semibold text-navy underline">Sports:</span> {sports[0].sportName}</p>
 
-            <Link to={`/college_details/${20}`} className="btn_primary w-full block text-center mt-4">View Details</Link>
+            <Link to={`/college_details/${_id}`} className="btn_primary w-full block text-center mt-4">View Details</Link>
         </div>
     );
 };

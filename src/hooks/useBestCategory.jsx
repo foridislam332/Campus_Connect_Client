@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
+import useAxios from "./useAxios";
 
 const useBestCategory = () => {
     const { data: categoriesData = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['categoriesData'],
         queryFn: async () => {
-            const res = await fetch('/categories.json');
-            const data = await res.json();
-            return data;
+            const res = await useAxios('/categories');
+            return res.data;
         },
     });
 

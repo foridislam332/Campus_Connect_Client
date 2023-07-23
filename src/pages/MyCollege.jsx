@@ -16,7 +16,7 @@ const MyCollege = () => {
 
                 <div className="grid grid-cols-1 gap-6">
                     {
-                        collegesData.map((college, index) => <MyCollegeCard key={index} college={college} />)
+                        collegesData.map((college) => <MyCollegeCard key={college._id} college={college} />)
                     }
                 </div>
             </div>

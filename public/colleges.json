@@ -94,5 +94,101 @@
                 "captain": "Dr. Emily Wilson"
             }
         ]
+    },
+    {
+        "collegeImage": "https://i.ibb.co/XYZ123/college-2.jpg",
+        "collegeName": "ABC Institute",
+        "location": "Cityville, State",
+        "admissionProcess": "Admission to ABC Institute is based on a rigorous selection process that includes academic performance, entrance exams, and interviews. Prospective students must demonstrate a strong aptitude for the chosen field of study.",
+        "admissionDate": "2023-08-15",
+        "events": [
+            {
+                "eventName": "Science Expo",
+                "date": "October 5-7, 2023",
+                "description": "The Science Expo is an annual showcase of cutting-edge research and scientific innovations. Students and faculty present their projects and collaborate with industry experts."
+            },
+            {
+                "eventName": "Industry Connect",
+                "date": "November 25, 2023",
+                "description": "Industry Connect is a networking event that allows students to interact with professionals from various industries and gain valuable insights into career opportunities."
+            }
+        ],
+        "research": 25,
+        "researchWorks": "ABC Institute is renowned for its research contributions in fields like biotechnology, nanotechnology, and renewable energy. The institute promotes interdisciplinary research for solving real-world challenges.",
+        "rating": 4.9,
+        "sports": [
+            {
+                "sportName": "Football",
+                "captain": "David Miller"
+            },
+            {
+                "sportName": "Tennis",
+                "captain": "Sophia Lee"
+            }
+        ]
+    },
+    {
+        "collegeImage": "https://i.ibb.co/987XYZ/college-3.jpg",
+        "collegeName": "Global University",
+        "location": "Metropolis, State",
+        "admissionProcess": "Global University follows a holistic admission process, considering academic achievements, extracurricular activities, leadership qualities, and personal interviews. The university aims to build a diverse and inclusive student community.",
+        "admissionDate": "2023-09-01",
+        "events": [
+            {
+                "eventName": "Global Summit",
+                "date": "October 15-18, 2023",
+                "description": "The Global Summit is an international conference that brings together scholars, leaders, and experts to discuss global issues and foster collaborations for a sustainable future."
+            },
+            {
+                "eventName": "Cultural Fest",
+                "date": "November 30, 2023",
+                "description": "The Cultural Fest celebrates the diversity of the university's student body through vibrant performances, food stalls, and cultural exhibitions from around the world."
+            }
+        ],
+        "research": 18,
+        "researchWorks": "Global University emphasizes research in areas such as climate change, social sciences, and global health. The university actively collaborates with international organizations to drive positive change.",
+        "rating": 4.7,
+        "sports": [
+            {
+                "sportName": "Volleyball",
+                "captain": "Oliver Anderson"
+            },
+            {
+                "sportName": "Cricket",
+                "captain": "Aisha Khan"
+            }
+        ]
+    },
+    {
+        "collegeImage": "https://i.ibb.co/789ABC/college-4.jpg",
+        "collegeName": "Science Institute",
+        "location": "Townsville, State",
+        "admissionProcess": "Science Institute admits students based on a comprehensive evaluation of academic records, entrance exams, and a personal statement. The institute seeks curious and enthusiastic learners committed to scientific inquiry.",
+        "admissionDate": "2023-07-30",
+        "events": [
+            {
+                "eventName": "Innovation Fair",
+                "date": "October 10-12, 2023",
+                "description": "The Innovation Fair showcases groundbreaking projects and inventions by students. It provides a platform to foster creativity and encourage problem-solving skills."
+            },
+            {
+                "eventName": "STEM Workshop",
+                "date": "November 20, 2023",
+                "description": "The STEM Workshop offers hands-on activities and experiments in science, technology, engineering, and mathematics to ignite the passion for STEM among young minds."
+            }
+        ],
+        "research": 15,
+        "researchWorks": "Science Institute focuses on research in fields like environmental science, materials science, and space exploration. The institute collaborates with government agencies and private organizations for scientific advancements.",
+        "rating": 4.5,
+        "sports": [
+            {
+                "sportName": "Athletics",
+                "captain": "Ryan Johnson"
+            },
+            {
+                "sportName": "Table Tennis",
+                "captain": "Isabella Lee"
+            }
+        ]
     }
 ]

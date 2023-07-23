@@ -31,7 +31,8 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'admission_form/:id',
-                element: <AdmissionForm />
+                element: <AdmissionForm />,
+                loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
             },
             {
                 path: 'my_college',
@@ -43,7 +44,8 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'college_details/:id',
-                element: <CollegeDetails />
+                element: <CollegeDetails />,
+                loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
             },
             {
                 path: 'review_form/:id',

@@ -14,9 +14,9 @@ const Admission = () => {
                     <p className="text-gray">Explore our list of top colleges known for their exceptional educational standards</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {
-                        collegesData.map((college, index) => <AdmissionCard key={index} college={college} />)
+                        collegesData.map((college) => <AdmissionCard key={college._id} college={college} />)
                     }
                 </div>
             </div>
