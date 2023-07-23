@@ -2,7 +2,9 @@
     {
         "collegeImage": "https://i.ibb.co/02LgXcj/college-1.jpg",
         "collegeName": "Tech Academy",
+        "location": "Villageville, State",
         "admissionProcess": "Admission to Tech Academy is competitive and requires a strong academic background in math and science. Prospective students must submit their academic records, standardized test scores, letters of recommendation, and a personal statement detailing their interest in technology and engineering.",
+        "admissionDate": "2023-07-01",
         "events": [
             {
                 "eventName": "Tech Fest",
@@ -23,7 +25,9 @@
     {
         "collegeImage": "https://i.ibb.co/XzXxmfp/college-2.jpg",
         "collegeName": "Art Institute",
+        "location": "Citytown, State",
         "admissionProcess": "Admission to the Art Institute is based on a portfolio review and a personal interview. Prospective students are required to submit samples of their artwork, along with academic records and letters of recommendation.",
+        "admissionDate": "2023-12-28",
         "events": [
             {
                 "eventName": "Art Exhibition",
@@ -44,7 +48,9 @@
     {
         "collegeImage": " https://i.ibb.co/PY2kd5C/college-3.jpg",
         "collegeName": "Medico University",
+        "location": "Townsville, State",
         "admissionProcess": "Admission to Medico University's medical programs is highly competitive. Prospective students must have a strong academic record in science subjects, demonstrate a passion for medicine, and pass the Medical College Admission Test (MCAT).",
+        "admissionDate": "2023-05-01",
         "events": [
             {
                 "eventName": "Medical Symposium",

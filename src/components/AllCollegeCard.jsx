@@ -5,7 +5,7 @@ import { Rating, Star } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 
 const AllCollegeCard = ({ college }) => {
-    const { collegeImage, collegeName, admissionProcess, events, research, researchWorks, rating, sports } = college;
+    const { collegeImage, collegeName, admissionProcess, research, admissionDate, rating } = college;
 
     const myStyles = {
         itemShapes: Star,
@@ -25,22 +25,9 @@ const AllCollegeCard = ({ college }) => {
 
             <p className="mb-2 line-clamp-2 text-sm drop-shadow-lg"><span className="font-semibold text-navy underline">Admission Process:</span> {admissionProcess}</p>
 
-            <div className="mb-2 flex items-start gap-1 text-sm">
-                <p className="font-semibold text-navy underline drop-shadow-lg">Events: </p>
-                <ul>
-                    {events.map((event, index) => (
-                        <li key={index} className="drop-shadow-lg">
-                            {event.eventName}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-
             <p className="font-semibold mb-2 text-sm line-clamp-2 drop-shadow-lg"><span className="text-navy underline">Number of Research:</span> {research}</p>
 
-            <p className="mb-2 text-sm line-clamp-2 drop-shadow-lg"><span className="font-semibold text-navy underline">Research History:</span> {researchWorks}</p>
-
-            <p className="mb-2 text-sm line-clamp-2 drop-shadow-lg"><span className="font-semibold text-navy underline">Sports:</span> {sports}</p>
+            <p className="mb-2 text-sm line-clamp-2 drop-shadow-lg"><span className="font-semibold text-navy underline">Admission Date:</span> {admissionDate}</p>
 
             <Link to={`college_details/`} className="btn_primary w-full block text-center mt-4">View Details</Link>
         </div>
