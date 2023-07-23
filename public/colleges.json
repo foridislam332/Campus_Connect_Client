@@ -20,7 +20,16 @@
         "research": 20,
         "researchWorks": "Tech Academy is at the forefront of cutting-edge research in computer science, artificial intelligence, and sustainable technologies. The college partners with industry leaders and government agencies to address global challenges.",
         "rating": 4.6,
-        "sports": "Soccer"
+        "sports": [
+            {
+                "sportName": "Swimming",
+                "captain": "Michael Williams"
+            },
+            {
+                "sportName": "Basketball",
+                "captain": "Emily Johnson"
+            }
+        ]
     },
     {
         "collegeImage": "https://i.ibb.co/XzXxmfp/college-2.jpg",
@@ -43,7 +52,16 @@
         "research": 16,
         "researchWorks": "The Art Institute encourages interdisciplinary artistic exploration and collaborates with museums and galleries to promote the fusion of traditional and contemporary art forms.",
         "rating": 4.2,
-        "sports": "Paintball"
+        "sports": [
+            {
+                "sportName": "Paintball",
+                "captain": "Jessica Lee"
+            },
+            {
+                "sportName": "Dance",
+                "captain": "Sophia Martinez"
+            }
+        ]
     },
     {
         "collegeImage": " https://i.ibb.co/PY2kd5C/college-3.jpg",
@@ -66,6 +84,15 @@
         "research": 12,
         "researchWorks": "Medico University is dedicated to advancing medical knowledge through research and clinical studies. The university collaborates with leading healthcare institutions to improve patient care and outcomes.",
         "rating": 3.9,
-        "sports": "Surgery Simulation"
+        "sports": [
+            {
+                "sportName": "Surgery Simulation",
+                "captain": "Dr. Alex Johnson"
+            },
+            {
+                "sportName": "Chess",
+                "captain": "Dr. Emily Wilson"
+            }
+        ]
     }
 ]

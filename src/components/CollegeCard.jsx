@@ -23,7 +23,7 @@ const CollegeCard = ({ college }) => {
 
             <p className="mb-2 text-sm line-clamp-2 drop-shadow-lg"><span className="font-semibold text-navy underline">Research History:</span> {researchWorks}</p>
 
-            <p className="mb-2 text-sm line-clamp-2 drop-shadow-lg"><span className="font-semibold text-navy underline">Sports:</span> {sports}</p>
+            <p className="mb-2 text-sm line-clamp-2 drop-shadow-lg"><span className="font-semibold text-navy underline">Sports:</span> {sports[0].sportName}</p>
 
             <button className="btn_primary w-full mt-4">View Details</button>
         </div>
