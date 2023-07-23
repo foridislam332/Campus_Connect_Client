@@ -9,6 +9,7 @@ import { HiOutlinePhotograph } from 'react-icons/hi';
 import { BiUserPin } from 'react-icons/bi';
 import { BsShieldCheck } from 'react-icons/bs';
 import useAuth from "../hooks/useAuth";
+import SocialLogin from "../components/SocialLogin";
 
 const SignUp = () => {
     const { signUpUser, profileUpdate } = useAuth();
@@ -96,7 +97,7 @@ const SignUp = () => {
                         <span className='border-t border-red w-full block'></span>
                     </div>
 
-                    {/* <SocialLogin /> */}
+                    <SocialLogin />
 
                     <p className='mt-5 text-center text-gray'>Already have an account? <Link className='text-navy font-medium underline' to='/login'>Login</Link></p>
                 </form>

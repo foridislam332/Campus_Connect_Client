@@ -7,6 +7,7 @@ import { MdAlternateEmail, MdLockOutline } from 'react-icons/md';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
+import SocialLogin from "../components/SocialLogin";
 
 const Login = () => {
     const { signIn } = useAuth();
@@ -62,7 +63,7 @@ const Login = () => {
                         <span className='border-t border-red w-full block'></span>
                     </div>
 
-                    {/* <SocialLogin /> */}
+                    <SocialLogin />
 
                     <p className='mt-5 text-center text-gray'>New to Campus connect? <Link className='text-navy font-medium underline' to='/sign_up'>Sign Up</Link></p>
                 </form>
