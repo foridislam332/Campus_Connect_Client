@@ -27,12 +27,14 @@ const Profile = () => {
             {/* Dropdown */}
             <div
                 className="absolute right-0 top-28 max-w-xs min-w-[200px] bg-white shadow-lg origin-top-right transition-all duration-300 ease-in-out group-hover:top-20 invisible group-hover:visible opacity-0 group-hover:opacity-100">
+
                 <p
                     to="/"
                     className="relative block w-full px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 z-10"
                 >
-                    {user?.displayName}
-                    <Link to='/editProfile' className='absolute top-0 right-0 bg-navy p-2 rounded-full z-40 m-1 hover:shadow-xl hover:shadow-blue transition-all duration-300 ease-in-out'>
+                    <Link to='/view_profile' className='block text-sm mb-2'>View Profile</Link>
+                    <Link to='/view_profile'>{user?.displayName}</Link>
+                    <Link to='/edit_profile' className='absolute top-0 right-0 bg-navy p-2 rounded-full z-40 m-1 hover:shadow-xl hover:shadow-blue transition-all duration-300 ease-in-out'>
                         <FaPencilAlt className='text-xs text-white' />
                     </Link>
                 </p>
@@ -40,9 +42,9 @@ const Profile = () => {
                 {
                     user?.email && <p
                         to="/"
-                        className="block px-4 py-1 text-sm text-gray-700 hover:bg-light-gray"
+                        className="block px-4 text-sm text-gray-700 hover:bg-light-gray"
                     >
-                        Email: <br /> {user.email}
+                        {user.email}
                     </p>
                 }
 

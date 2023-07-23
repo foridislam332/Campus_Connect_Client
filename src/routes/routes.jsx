@@ -9,6 +9,8 @@ import ReviewForm from '../pages/ReviewForm';
 import CollegeDetails from '../pages/CollegeDetails';
 import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
+import ViewProfile from '../pages/ViewProfile';
+import EditProfile from '../pages/EditProfile';
 
 const routes = createBrowserRouter([
     {
@@ -46,6 +48,14 @@ const routes = createBrowserRouter([
             {
                 path: 'review_form/:id',
                 element: <ReviewForm />
+            },
+            {
+                path: 'view_profile',
+                element: <ViewProfile />
+            },
+            {
+                path: 'edit_profile',
+                element: <EditProfile />
             },
             {
                 path: 'login',
