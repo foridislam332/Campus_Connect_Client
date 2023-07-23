@@ -1,8 +1,12 @@
+import useAuth from '../hooks/useAuth';
+import Profile from '../pages/Profile';
 import ActiveLink from './ActiveLink';
 
 const Navigation = () => {
+    const { user } = useAuth();
+
     return (
-        <ul className="flex space-x-8">
+        <ul className="flex items-center space-x-8">
             <li>
                 <ActiveLink to='/'>
                     Home
@@ -23,6 +27,13 @@ const Navigation = () => {
                     My College
                 </ActiveLink>
             </li>
+            {
+                user?.email ? <Profile /> : <li>
+                    <ActiveLink to='/login'>
+                        Login
+                    </ActiveLink>
+                </li>
+            }
         </ul>
     );
 };
