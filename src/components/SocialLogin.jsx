@@ -10,7 +10,7 @@ import useAxios from '../hooks/useAxios';
 import Swal from 'sweetalert2';
 
 const SocialLogin = () => {
-    const { googleSignIn } = useAuth();
+    const { googleSignIn, facebookSignIn } = useAuth();
 
     // navigate
     const navigate = useNavigate();
@@ -46,13 +46,43 @@ const SocialLogin = () => {
                 });
             })
     }
+
+    const signInWithFacebook = () => {
+        facebookSignIn()
+            .then((result) => {
+                const loggedUser = result.user;
+                const user = { name: loggedUser.displayName, email: loggedUser.email, university: 'N/A', photo: loggedUser.photoURL, address: 'N/A' };
+
+                useAxios.post('/users', user)
+                    .then(data => {
+                        if (data.data.insertedId) {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Sign Up successfully',
+                                showConfirmButton: false,
+                                timer: 2500
+                            });
+                            navigate(from, { replace: true })
+                        }
+                    })
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                toast.error(error.message, {
+                    position: "top-right",
+                    autoClose: 4000,
+                    theme: "light",
+                });
+            })
+    }
     return (
         <div className='flex items-center justify-center gap-6'>
             <button onClick={signInWithGoogle} className=''>
                 <img className='w-12' src={googleImg} alt="google" />
             </button>
 
-            <button onClick={signInWithGoogle} className=''>
+            <button onClick={signInWithFacebook} className=''>
                 <FaFacebook className='text-5xl text-blue-500' />
             </button>
         </div>
