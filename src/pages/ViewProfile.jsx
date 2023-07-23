@@ -12,7 +12,7 @@ const ViewProfile = () => {
             <Breadcrumbs title='View Profile' />
             <div className="container py-20">
                 <div className='p-8 max-w-sm mx-auto shadow-2xl relative'>
-                    <Link to='/edit_profile' className='absolute top-3 right-3 bg-navy p-4 rounded-full z-40 m-1 hover:shadow-xl hover:shadow-blue transition-all duration-300 ease-in-out'>
+                    <Link to='/edit_profile' className='absolute top-3 right-3 bg-navy hover:bg-red p-4 rounded-full z-40 m-1 hover:shadow-xl hover:shadow-blue transition-all duration-300 ease-in-out'>
                         <FaPencilAlt className='text-lg text-white' />
                     </Link>
                     <div className='flex items-center justify-center'>
