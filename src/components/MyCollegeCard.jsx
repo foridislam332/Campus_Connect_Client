@@ -61,7 +61,7 @@ const MyCollegeCard = ({ college }) => {
 
                 <p className="mb-2 text-sm line-clamp-2 drop-shadow-lg"><span className="font-semibold text-navy underline">Research History:</span> {researchWorks}</p>
 
-                <Link to={`college_details/`} className="btn_primary w-full block text-center mt-4">Write a Review</Link>
+                <Link to={`/review_form/${research}`} className="btn_primary w-full block text-center mt-4">Write a Review</Link>
             </div>
         </div>
     );
