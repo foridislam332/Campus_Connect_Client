@@ -4,7 +4,7 @@ import useMyCollege from "../hooks/useMyCollege";
 
 const MyCollege = () => {
     const [myCollegeData] = useMyCollege();
-    console.log(myCollegeData)
+
     return (
         <section>
             <Breadcrumbs title='My College' />

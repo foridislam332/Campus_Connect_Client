@@ -61,7 +61,7 @@ const Reviews = () => {
                             <SwiperSlide key={index}>
                                 <div className="p-8 border border-red rounded-md">
                                     <div className="flex items-center gap-6">
-                                        <img className="w-20" src={review.userImage} alt="" />
+                                        <img className="w-20 rounded-full" src={review.userImage} alt="" />
                                         <div>
                                             <h2 className="font-medium tracking-wide">{review.username}</h2>
                                             <p className="text-gray text-sm italic">{review.date}</p>
