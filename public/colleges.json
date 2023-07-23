@@ -15,7 +15,9 @@
                 "description": "The Career Fair brings together leading tech companies and students, providing an opportunity to explore internships and job opportunities."
             }
         ],
+        "research": 20,
         "researchWorks": "Tech Academy is at the forefront of cutting-edge research in computer science, artificial intelligence, and sustainable technologies. The college partners with industry leaders and government agencies to address global challenges.",
+        "rating": 4.6,
         "sports": "Soccer"
     },
     {
@@ -34,7 +36,9 @@
                 "description": "The Fashion Show features original designs created by fashion design students. It attracts industry professionals and fashion enthusiasts."
             }
         ],
+        "research": 16,
         "researchWorks": "The Art Institute encourages interdisciplinary artistic exploration and collaborates with museums and galleries to promote the fusion of traditional and contemporary art forms.",
+        "rating": 4.2,
         "sports": "Paintball"
     },
     {
@@ -53,7 +57,9 @@
                 "description": "The Healthcare Conference focuses on topics related to public health, policy, and healthcare access. It provides insights from experts in the field."
             }
         ],
+        "research": 12,
         "researchWorks": "Medico University is dedicated to advancing medical knowledge through research and clinical studies. The university collaborates with leading healthcare institutions to improve patient care and outcomes.",
+        "rating": 3.9,
         "sports": "Surgery Simulation"
     }
 ]

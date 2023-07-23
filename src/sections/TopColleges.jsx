@@ -14,7 +14,7 @@ const TopColleges = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {
-                        collegesData.map((college, index) => <CollegeCard key={index} college={college} />)
+                        collegesData?.slice(0, 3).map((college, index) => <CollegeCard key={index} college={college} />)
                     }
                 </div>
             </div>
