@@ -33,7 +33,7 @@ const routes = createBrowserRouter([
             {
                 path: 'admission_form/:id',
                 element: <AdmissionForm />,
-                loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
+                loader: ({ params }) => fetch(`https://campus-connect-server-delta.vercel.app/colleges/${params.id}`)
             },
             {
                 path: 'my_college',
@@ -46,7 +46,7 @@ const routes = createBrowserRouter([
             {
                 path: 'college_details/:id',
                 element: <PrivateRoute><CollegeDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
+                loader: ({ params }) => fetch(`https://campus-connect-server-delta.vercel.app/colleges/${params.id}`)
             },
             {
                 path: 'review_form',

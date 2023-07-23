@@ -39,7 +39,7 @@ const CollegeDetails = () => {
                         <div className="mb-2 flex items-start gap-1 text-sm">
                             <p className="font-semibold text-navy underline drop-shadow-lg">Events: </p>
                             <ul>
-                                {collegesData.events.map((event, index) => (
+                                {collegesData?.events?.map((event, index) => (
                                     <div key={index} className="drop-shadow-lg flex items-baseline gap-2 mt-4">
                                         <p className="text-lg">0{index + 1}.</p>
                                         <div>
@@ -55,7 +55,7 @@ const CollegeDetails = () => {
                         <div className="mb-2 flex items-start gap-1 text-sm">
                             <p className="font-semibold text-navy underline drop-shadow-lg">Sports: </p>
                             <ul>
-                                {collegesData.sports.map((sport, index) => (
+                                {collegesData?.sports?.map((sport, index) => (
                                     <div key={index} className="drop-shadow-lg flex items-baseline gap-2 mt-4">
                                         <p className="text-lg">0{index + 1}.</p>
                                         <div>
