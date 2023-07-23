@@ -4,6 +4,7 @@ import Home from '../pages/Home';
 import Colleges from '../pages/Colleges';
 import MyCollege from '../pages/MyCollege';
 import Admission from '../pages/Admission';
+import AdmissionForm from '../pages/AdmissionForm';
 
 const routes = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const routes = createBrowserRouter([
             {
                 path: 'admission',
                 element: <Admission />
+            },
+            {
+                path: 'admission_form/:id',
+                element: <AdmissionForm />
             },
             {
                 path: 'my_college',
