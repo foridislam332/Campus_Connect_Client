@@ -7,6 +7,8 @@ import Admission from '../pages/Admission';
 import AdmissionForm from '../pages/AdmissionForm';
 import ReviewForm from '../pages/ReviewForm';
 import CollegeDetails from '../pages/CollegeDetails';
+import Login from '../pages/Login';
+import SignUp from '../pages/SignUp';
 
 const routes = createBrowserRouter([
     {
@@ -44,6 +46,14 @@ const routes = createBrowserRouter([
             {
                 path: 'review_form/:id',
                 element: <ReviewForm />
+            },
+            {
+                path: 'login',
+                element: <Login />
+            },
+            {
+                path: 'sign_up',
+                element: <SignUp />
             },
         ]
     }
