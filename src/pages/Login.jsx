@@ -8,9 +8,11 @@ import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
 import SocialLogin from "../components/SocialLogin";
+import { toast } from "react-toastify";
 
 const Login = () => {
-    const { signIn } = useAuth();
+    const { signIn, resetPassword } = useAuth();
+    const [email, setEmail] = useState('');
 
     // navigate
     const navigate = useNavigate();
@@ -19,6 +21,7 @@ const Login = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
+        setEmail(data.email);
         signIn(data.email, data.password)
             .then(() => {
                 navigate(from, { replace: true })
@@ -32,6 +35,31 @@ const Login = () => {
             })
     };
 
+    const handleReset = () => {
+        if (!email) {
+            return toast.error('Please Provide email', {
+                position: "top-center",
+                autoClose: 3000,
+                theme: "light",
+            });
+        }
+        resetPassword(email)
+            .then(() => {
+                toast.success('Please Check your Email', {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "light",
+                });
+            })
+            .catch(error => {
+                toast.error(error.message, {
+                    position: "top-center",
+                    autoClose: 3000,
+                    theme: "light",
+                });
+            })
+    }
+
     const [type, setType] = useState('password');
     return (
         <section>
@@ -43,7 +71,7 @@ const Login = () => {
                     <div className='flex items-center border border-navy rounded-lg gap-3 p-3'>
                         <label htmlFor="email"> <MdAlternateEmail className='text-green text-2xl' /></label>
 
-                        <input className='w-full border-none outline-none' id='email' placeholder="Enter email" {...register("email", { required: true })} />
+                        <input className='w-full border-none outline-none' type="email" id='email' placeholder="Enter email" {...register("email", { required: true })} />
                     </div>
                     {errors.email && <span className='text-sm text-red ml-1'>Email is required</span>}
 
@@ -58,9 +86,12 @@ const Login = () => {
                         </button>
                     </div>
                     {errors.password && <span className='text-sm text-red ml-1'>Password is required</span>}
-                    <Link to='/login' className='text-sm text-right  text-gray block'>Forget password?</Link>
 
-                    <button className='btn_primary w-full mt-7 border' type='submit'>Login</button>
+                    <p className='text-sm text-right  text-gray mt-2'>Forget password? <button className="text-blue-700 font-medium"
+                        onClick={handleReset}
+                    >Reset password</button></p>
+
+                    <button className='btn_primary w-full mt-6 border' type='submit'>Login</button>
 
                     <div className='flex items-center gap-3 mx-5 my-5'>
                         <span className='border-t border-red w-full block'></span>

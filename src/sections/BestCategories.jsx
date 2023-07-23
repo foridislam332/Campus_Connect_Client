@@ -7,7 +7,7 @@ const BestCategories = () => {
     return (
         <section className='container py-20 md:py-[120px]'>
             <div className='grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-10'>
-                <div className='mt-8'>
+                <div className='md:mt-8'>
                     <h1 className='text-red text-3xl lg:text-[40px] lg:leading-[50px] font-bold mb-10 drop-shadow-xl'>Our Best <br /> Categories</h1>
                     <button className='btn_primary'>More Categories</button>
                 </div>

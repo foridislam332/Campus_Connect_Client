@@ -14,8 +14,8 @@ const AdmissionCard = ({ college }) => {
     }
 
     return (
-        <div className="bg-white p-4 border border-red border-dashed rounded-lg shadow-lg hover:border-solid hover:shadow-2xl duration-300 flex gap-6">
-            <img src={collegeImage} alt={collegeName} className="w-56 object-cover rounded-lg" />
+        <div className="bg-white p-4 border border-red border-dashed rounded-lg shadow-lg hover:border-solid hover:shadow-2xl duration-300 flex flex-col md:flex-row gap-3 md:gap-6">
+            <img src={collegeImage} alt={collegeName} className="w-full md:w-56 object-cover rounded-lg" />
             <div className="w-full">
                 <div className='flex items-center gap-1'>
                     <span className="text-xs">{rating}</span>
