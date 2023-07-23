@@ -11,7 +11,7 @@ const Admission = () => {
             <div className="container py-20">
                 <div className="text-center max-w-lg mx-auto mb-14">
                     <h1 className="text-navy text-5xl font-bold mb-5 drop-shadow-lg">Admission</h1>
-                    <p className="text-gray">Explore our list of top colleges known for their exceptional educational standards</p>
+                    <p className="text-gray">Our Admission section offers a comprehensive guide to the application process for colleges and universities.</p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

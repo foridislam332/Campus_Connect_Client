@@ -11,7 +11,7 @@ const Colleges = () => {
             <div className="container py-20">
                 <div className="text-center max-w-lg mx-auto mb-14">
                     <h1 className="text-navy text-5xl font-bold mb-5 drop-shadow-lg">All Colleges</h1>
-                    <p className="text-gray">Explore our list of top colleges known for their exceptional educational standards</p>
+                    <p className="text-gray">Our "All Colleges" section provides an extensive database of institutions offering a diverse range of programs</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

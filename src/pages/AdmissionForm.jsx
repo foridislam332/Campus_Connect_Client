@@ -55,7 +55,7 @@ const AdmissionForm = () => {
 
                         <div className='w-full'>
                             <label className='text-gray' htmlFor="candidateEmail">Candidate Email:</label>
-                            <input type='email' id='candidateEmail' defaultValue={user?.email} {...register("candidateEmail", { required: true })} className='w-full border border-green py-2 px-3 rounded-md outline-none' />
+                            <input type='email' id='candidateEmail' value={user?.email} {...register("candidateEmail", { required: true })} className='w-full border border-green py-2 px-3 rounded-md outline-none' />
                             {errors.candidateEmail && <span className='text-red'>This field is required</span>}
                         </div>
 

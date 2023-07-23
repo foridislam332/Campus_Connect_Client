@@ -24,7 +24,7 @@ const Reviews = () => {
             <div className="container">
                 <div className="text-center max-w-lg mx-auto mb-14">
                     <h1 className="text-navy text-5xl font-bold mb-5 drop-shadow-lg">Reviews</h1>
-                    <p className="text-gray">Welcome to our Colleges Gallery, a curated collection of diverse educational institutions from around the world</p>
+                    <p className="text-gray">Explore what students are saying about our colleges. Read genuine reviews and testimonials from current.</p>
                 </div>
 
                 <Swiper
