@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
@@ -16,8 +16,12 @@ import Swal from "sweetalert2";
 const SignUp = () => {
     const { signUpUser, profileUpdate } = useAuth();
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    // navigate
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         if (data.password.length < 6) {
             return toast.warning('password should be 6 characters', {

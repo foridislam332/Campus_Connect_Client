@@ -2,11 +2,12 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import { toast } from 'react-toastify';
 
-
 import { FaFacebook } from 'react-icons/fa';
 
 // image
 import googleImg from '../assets/images/google.png';
+import useAxios from '../hooks/useAxios';
+import Swal from 'sweetalert2';
 
 const SocialLogin = () => {
     const { googleSignIn } = useAuth();
@@ -20,6 +21,22 @@ const SocialLogin = () => {
         googleSignIn()
             .then((result) => {
                 const loggedUser = result.user;
+                const user = { name: loggedUser.displayName, email: loggedUser.email, university: 'N/A', photo: loggedUser.photoURL, address: 'N/A' };
+
+                useAxios.post('/users', user)
+                    .then(data => {
+                        if (data.data.insertedId) {
+                            Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Sign Up successfully',
+                                showConfirmButton: false,
+                                timer: 2500
+                            });
+                            navigate(from, { replace: true })
+                        }
+                    })
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 toast.error(error.message, {

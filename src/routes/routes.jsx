@@ -11,6 +11,7 @@ import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
 import ViewProfile from '../pages/ViewProfile';
 import EditProfile from '../pages/EditProfile';
+import PrivateRoute from './PrivateRoute';
 
 const routes = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'my_college',
-                element: <MyCollege />
+                element: <PrivateRoute><MyCollege /></PrivateRoute>
             },
             {
                 path: 'colleges',
@@ -44,12 +45,12 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'college_details/:id',
-                element: <CollegeDetails />,
+                element: <PrivateRoute><CollegeDetails /></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
             },
             {
                 path: 'review_form/:id',
-                element: <ReviewForm />
+                element: <PrivateRoute><ReviewForm /></PrivateRoute>
             },
             {
                 path: 'view_profile',

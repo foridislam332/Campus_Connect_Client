@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Breadcrumbs from "../components/Breadcrumbs";
 import { useForm } from 'react-hook-form';
 
@@ -12,11 +12,16 @@ import SocialLogin from "../components/SocialLogin";
 const Login = () => {
     const { signIn } = useAuth();
 
+    // navigate
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         signIn(data.email, data.password)
             .then(() => {
-                alert('login success')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 toast.error(error.message, {
