@@ -4,9 +4,11 @@ import useAuth from "../hooks/useAuth";
 import { useLoaderData } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
 import Swal from "sweetalert2";
+import useUsers from "../hooks/useUsers";
 
 const AdmissionForm = () => {
     const { user } = useAuth();
+    const [userData] = useUsers();
     const collegesData = useLoaderData();
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -24,6 +26,17 @@ const AdmissionForm = () => {
                         timer: 2500
                     });
                 }
+            })
+
+        const updateUsesData = {
+            name: userData.name, photo: userData.photo,
+            university: data.collegeName,
+            address: data.address
+        }
+
+        useAxios.patch(`/users/${userData?._id}`, updateUsesData)
+            .then(data => {
+
             })
     };
     return (

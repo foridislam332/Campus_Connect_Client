@@ -69,7 +69,6 @@ const Reviews = () => {
                                     </div>
                                     <div className="mt-4">
                                         <h4 className="text-navy text-sm font-medium">College: {review.collegeName}</h4>
-                                        <p className="text-gray text-sm">Location: {review.location}</p>
 
                                         <div className='flex items-center gap-1 mt-4'>
                                             <span>{review.rating}</span>

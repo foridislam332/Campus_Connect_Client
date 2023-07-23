@@ -49,7 +49,7 @@ const routes = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/colleges/${params.id}`)
             },
             {
-                path: 'review_form/:id',
+                path: 'review_form',
                 element: <PrivateRoute><ReviewForm /></PrivateRoute>
             },
             {

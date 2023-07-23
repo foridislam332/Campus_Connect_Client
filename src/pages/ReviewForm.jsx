@@ -3,16 +3,39 @@ import { useForm } from 'react-hook-form';
 
 // Rating star
 import { Rating, Star } from '@smastrom/react-rating'
-import '@smastrom/react-rating/style.css'
+import '@smastrom/react-rating/style.css';
+
 import { useState } from "react";
+import Swal from "sweetalert2";
+import useAxios from "../hooks/useAxios";
+import useUsers from "../hooks/useUsers";
+import { useLoaderData } from "react-router-dom";
+import moment from 'moment';
+
 
 const ReviewForm = () => {
-    const [rating, setRating] = useState(0)
+    const [userData] = useUsers();
+    console.log(userData)
+
+    const [rating, setRating] = useState(0);
+    const currentDate = moment().format('MMM DD, YYYY');
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        const newData = { ...data, rating }
-        console.log(newData)
+        const newData = { ...data, rating, collegeName: userData.university, username: userData.name, date: currentDate, userImage: userData.photo }
+
+        useAxios.post('/reviews', newData)
+            .then(data => {
+                if (data.data.insertedId) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Review add successfully',
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
+                }
+            })
     };
 
     const myStyles = {
@@ -38,7 +61,7 @@ const ReviewForm = () => {
 
                     <div className='flex flex-col gap-4'>
                         <div className='w-full mt-8'>
-                            <textarea rows={5} id='review' placeholder='Write your review' {...register("review", { required: true })} className='w-full border border-red py-2 px-3 rounded-md outline-none' />
+                            <textarea rows={5} id='review' placeholder='Write your review' {...register("comment", { required: true })} className='w-full border border-red py-2 px-3 rounded-md outline-none' />
                             {errors.review && <span className='text-red'>This field is required</span>}
                         </div>
 
