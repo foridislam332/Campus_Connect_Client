@@ -29,7 +29,7 @@ const AllCollegeCard = ({ college }) => {
 
             <p className="mb-2 text-sm line-clamp-2 drop-shadow-lg"><span className="font-semibold text-navy underline">Admission Date:</span> {admissionDate}</p>
 
-            <Link to={`college_details/`} className="btn_primary w-full block text-center mt-4">View Details</Link>
+            <Link to={`/college_details/${20}`} className="btn_primary w-full block text-center mt-4">View Details</Link>
         </div>
     );
 };

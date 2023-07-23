@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const CollegeCard = ({ college }) => {
     const { collegeImage, collegeName, admissionProcess, events, researchWorks, sports } = college;
@@ -25,7 +26,7 @@ const CollegeCard = ({ college }) => {
 
             <p className="mb-2 text-sm line-clamp-2 drop-shadow-lg"><span className="font-semibold text-navy underline">Sports:</span> {sports[0].sportName}</p>
 
-            <button className="btn_primary w-full mt-4">View Details</button>
+            <Link to={`/college_details/${20}`} className="btn_primary w-full block text-center mt-4">View Details</Link>
         </div>
     );
 };

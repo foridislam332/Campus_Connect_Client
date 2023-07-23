@@ -24,7 +24,7 @@ const ReviewForm = () => {
         <section>
             <Breadcrumbs title='Admission Form' />
             <div className="container py-20">
-                <form onSubmit={handleSubmit(onSubmit)} className="max-w-xl mx-auto p-10 border border-red">
+                <form onSubmit={handleSubmit(onSubmit)} className="max-w-xl mx-auto p-10 shadow-2xl rounded-xl">
                     <h1 className="text-navy text-5xl font-bold mb-5 drop-shadow-lg">Review</h1>
 
                     <div className='flex items-center justify-center gap-1 mt-1 bg-white shadow-lg py-8'>
