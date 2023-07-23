@@ -2,6 +2,8 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import { useForm } from 'react-hook-form';
 import useAuth from "../hooks/useAuth";
 import { useLoaderData } from "react-router-dom";
+import useAxios from "../hooks/useAxios";
+import Swal from "sweetalert2";
 
 const AdmissionForm = () => {
     const { user } = useAuth();
@@ -9,7 +11,20 @@ const AdmissionForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        const newData = { ...data, events: collegesData.events, sports: collegesData.sports, research: collegesData.research, researchWorks: collegesData.researchWorks }
+
+        useAxios.post('/my_college', newData)
+            .then(data => {
+                if (data.data.insertedId) {
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Admission successfully',
+                        showConfirmButton: false,
+                        timer: 2500
+                    });
+                }
+            })
     };
     return (
         <section>
@@ -54,9 +69,9 @@ const AdmissionForm = () => {
                     </div>
 
                     <div className='w-full mt-4'>
-                        <label className='text-gray' htmlFor="Image URL">Image URL:</label>
-                        <input id='imageURL' defaultValue={collegesData.collegeImage} {...register("imageURL", { required: true })} className='w-full border border-green py-2 px-3 rounded-md outline-none' />
-                        {errors.imageURL && <span className='text-red'>This field is required</span>}
+                        <label className='text-gray' htmlFor="collegeImage">Image URL:</label>
+                        <input id='collegeImage' defaultValue={collegesData.collegeImage} {...register("collegeImage", { required: true })} className='w-full border border-green py-2 px-3 rounded-md outline-none' />
+                        {errors.collegeImage && <span className='text-red'>This field is required</span>}
                     </div>
 
                     <div className='mt-4 flex flex-col md:flex-row items-end gap-4'>

@@ -1,10 +1,10 @@
 import Breadcrumbs from "../components/Breadcrumbs";
 import MyCollegeCard from "../components/MyCollegeCard";
-import useColleges from "../hooks/useColleges";
+import useMyCollege from "../hooks/useMyCollege";
 
 const MyCollege = () => {
-    const [collegesData] = useColleges();
-
+    const [myCollegeData] = useMyCollege();
+    console.log(myCollegeData)
     return (
         <section>
             <Breadcrumbs title='My College' />
@@ -16,7 +16,7 @@ const MyCollege = () => {
 
                 <div className="grid grid-cols-1 gap-6">
                     {
-                        collegesData.map((college) => <MyCollegeCard key={college._id} college={college} />)
+                        myCollegeData?.map((college) => <MyCollegeCard key={college._id} college={college} />)
                     }
                 </div>
             </div>
