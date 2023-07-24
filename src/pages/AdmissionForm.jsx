@@ -1,7 +1,7 @@
 import Breadcrumbs from "../components/Breadcrumbs";
 import { useForm } from 'react-hook-form';
 import useAuth from "../hooks/useAuth";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import useAxios from "../hooks/useAxios";
 import Swal from "sweetalert2";
 import useUsers from "../hooks/useUsers";
@@ -10,6 +10,9 @@ const AdmissionForm = () => {
     const { user } = useAuth();
     const [userData] = useUsers();
     const collegesData = useLoaderData();
+
+    const navigate = useNavigate();
+    const from = '/my_college';
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -36,7 +39,7 @@ const AdmissionForm = () => {
 
         useAxios.patch(`/users/${userData?._id}`, updateUsesData)
             .then(data => {
-
+                navigate(from, { replace: true })
             })
     };
     return (
@@ -49,7 +52,7 @@ const AdmissionForm = () => {
                     <div className='flex flex-col lg:flex-row items-start gap-4'>
                         <div className='w-full'>
                             <label className='text-gray' htmlFor="candidateName">Candidate Name:</label>
-                            <input id='candidateName' defaultValue={user?.displayName} {...register("candidateName", { required: true })} className='w-full border border-green py-2 px-3 rounded-md outline-none' />
+                            <input id='candidateName' defaultValue={userData?.name} {...register("candidateName", { required: true })} className='w-full border border-green py-2 px-3 rounded-md outline-none' />
                             {errors.candidateName && <span className='text-red'>This field is required</span>}
                         </div>
 

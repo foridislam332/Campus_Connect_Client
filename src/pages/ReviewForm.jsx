@@ -9,12 +9,15 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import useAxios from "../hooks/useAxios";
 import useUsers from "../hooks/useUsers";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import moment from 'moment';
 
 
 const ReviewForm = () => {
     const [userData] = useUsers();
+
+    const navigate = useNavigate();
+    const from = '/';
 
     const [rating, setRating] = useState(0);
     const currentDate = moment().format('MMM DD, YYYY');
@@ -33,6 +36,7 @@ const ReviewForm = () => {
                         showConfirmButton: false,
                         timer: 2500
                     });
+                    navigate(from, { replace: true })
                 }
             })
     };
