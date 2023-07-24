@@ -1,8 +1,29 @@
-# React + Vite
+# Campus Connect | College Booking React Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3>Live Website: https://campus-connects.web.app/</h3>
 
-Currently, two official plugins are available:
+## Description:
+<p>Campus Connect is a college booking platform designed to the process of finding the best college for students. With its comprehensive database, Campus Connect revolutionizes the college search experience.</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features:
+
+* Fully Responsive Layout
+* Clean & Well Commended Codes
+* SEO Friendly code
+* Home Pages included
+* Review included
+* 404 pages included
+* And much more...
+
+## Pages:
+
+* Home page
+* Colleges page
+* Admission page
+* Admission Form page
+* My College page
+* College Details page
+* Review page
+* Search Result page
+* Login page
+* Sign Up page

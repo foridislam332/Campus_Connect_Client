@@ -2,6 +2,7 @@
 import { TfiClose } from "react-icons/tfi";
 
 import ActiveLink from "./ActiveLink";
+import SearchCollege from "../Shared/SearchCollege";
 
 const Drawer = ({ isOpen, toggle }) => {
     return (
@@ -34,6 +35,10 @@ const Drawer = ({ isOpen, toggle }) => {
                             My College
                         </ActiveLink>
                     </li>
+
+                    <div className="w-full">
+                        <SearchCollege />
+                    </div>
                 </ul>
             </div>
             {/* overlay */}

@@ -9,6 +9,7 @@ import { HiBars3 } from "react-icons/hi2";
 
 // logo
 import Logo from '../assets/images/logo.png';
+import SearchCollege from './SearchCollege';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -45,8 +46,9 @@ const Navbar = () => {
                     </button>
 
                     {/* Navigation links */}
-                    <div className='hidden lg:flex items-center gap-16'>
+                    <div className='hidden lg:flex items-center gap-10'>
                         <Navigation />
+                        <SearchCollege />
                     </div>
 
                     {/* Responsive menu button */}

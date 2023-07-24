@@ -13,6 +13,7 @@ import ViewProfile from '../pages/ViewProfile';
 import EditProfile from '../pages/EditProfile';
 import PrivateRoute from './PrivateRoute';
 import PageNotFound from '../pages/PageNotFound';
+import SearchResult from '../pages/SearchResult';
 
 const routes = createBrowserRouter([
     {
@@ -33,7 +34,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'admission_form/:id',
-                element: <AdmissionForm />,
+                element: <PrivateRoute><AdmissionForm /></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://campus-connect-server-delta.vercel.app/colleges/${params.id}`)
             },
             {
@@ -60,6 +61,11 @@ const routes = createBrowserRouter([
             {
                 path: 'edit_profile',
                 element: <EditProfile />
+            },
+            {
+                path: 'search_result/:name',
+                element: <SearchResult />,
+                loader: ({ params }) => fetch(`https://campus-connect-server-delta.vercel.app/colleges?search=${params.name}`)
             },
             {
                 path: 'login',
